@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>zhaoyeming</title>
+		<link rel="stylesheet" href="css/hovertree.css" />
+	</head>
+	<body>
+		<div class="hovertreeinfo">
+			<h2></h2>
+		</div>
+		<!-- 僅自動播放音樂 -->
+		<audio loop src="img/qianyuqianxun.mp3" id="audio" autoplay preload="auto">該瀏覽器不支援audio屬性</audio>
+		<script type="text/javascript">
+		//--建立頁面監聽，等待微信端頁面載入完畢 觸發音訊播放
+		document.addEventListener('DOMContentLoaded', function () {
+			function audioAutoPlay() {
+				var audio = document.getElementById('audio');
+					audio.play();
+				document.addEventListener("WeixinJSBridgeReady", function () {
+					audio.play();
+				}, false);
+			}
+			audioAutoPlay();
+		});
+		//--建立觸控監聽，當瀏覽器開啟頁面時，觸控式螢幕幕觸發事件，進行音訊播放
+		document.addEventListener('touchstart', function () {
+			function audioAutoPlay() {
+				var audio = document.getElementById('audio');
+					audio.play();
+			}
+			audioAutoPlay();
+		});
+		</script>
+
+		<!--/*外層最大容器*/-->
+		<div class="wrap">
+			<!--	/*包裹所有元素的容器*/-->
+			<div class="cube">
+				<!--前面圖片 -->
+				<div class="out_front">
+					<img src="C:\Users\96120\OneDrive\圖片\螢幕擷取畫面\1.png " class="pic" />
+				</div>
+				<!--後面圖片 -->
+				<div class="out_back">
+					<img src="img/img02.jpg" class="pic"/>
+				</div>
+				<!--左圖片 -->
+				<div class="out_left">
+					<img src="img/img03.jpg" class="pic" />
+				</div>
+				<div class="out_right">
+					<img src="img/img04.jpg" class="pic" />
+				</div>
+				<div class="out_top">
+					<img src="img/img05.jpg" class="pic" />
+				</div>
+				<div class="out_bottom">
+					<img src="img/img06.jpg" class="pic" />
+				</div>
+				<!--小正方體 -->
+				<span class="in_front">
+					<img src="img/img07.jpg" class="in_pic" />
+				</span>
+				<span class="in_back">
+					<img src="img/img08.jpg" class="in_pic" />
+				</span>
+				<span class="in_left">
+					<img src="img/img09.jpg" class="in_pic" />
+				</span>
+				<span class="in_right">
+					<img src="img/img10.jpg" class="in_pic" />
+				</span>
+				<span class="in_top">
+					<img src="img/img11.jpg" class="in_pic" />
+				</span>
+				<span class="in_bottom">
+					<img src="img/img12.jpg" class="in_pic" />
+				</span>
+			</div>
+		</div>
+
+	</body>
+</html>
